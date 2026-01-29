@@ -1,83 +1,89 @@
-# Dashboard Premier League – Power BI
+End-to-End Power BI Project – Performance & KPI Analysis
+Overview
 
-Questo progetto nasce con l’obiettivo di esercitarmi su un caso reale utilizzando Power BI, lavorando su un flusso completo: dal database alla dashboard, con particolare attenzione anche alla qualità del dato.
+Questo progetto implementa un flusso completo di Business Intelligence, dalla preparazione dei dati alla realizzazione di dashboard analitiche, con particolare attenzione a modellazione dati, qualità dell’informazione e coerenza dei KPI.
 
-## Contenuto del progetto
-La dashboard fornisce una **overview sulla Premier League a livello di team**, con una visione generale delle performance delle squadre.
+Il dominio della Premier League viene utilizzato come contesto applicativo per simulare uno scenario reale di analisi delle performance, adottando approcci e soluzioni tipiche di progetti BI in ambito enterprise.
 
-In particolare sono presenti:
-- panoramica delle **statistiche principali per ogni squadra**
-- **classifica dei top marcatori**
-- **indicatori sintetici** su risultati e andamento delle squadre
+Scope of the Analysis
 
-Il modello è stato pensato per poter essere **esteso su più stagioni**, con l’aggiunta di ulteriori pagine di dettaglio e confronti temporali.
+La dashboard fornisce una visione di sintesi delle performance, focalizzata su:
 
-## Tecnologie utilizzate
-- SQL Server come database di appoggio
-- Power BI per la visualizzazione
-- Script ETL per la preparazione dei dati
+indicatori chiave di performance (KPI)
 
-## Attività svolte
-- Caricamento dati su SQL Server  
-- Preparazione e trasformazione dei dati tramite ETL  
-- Creazione del modello dati con tabelle di fatti e dimensioni  
-- Sviluppo della dashboard di overview in Power BI  
+confronti tra entità
 
----
+trend e andamenti aggregati
 
-## Processo di Data Profiling e Data Quality
+Il modello dati è stato progettato per essere estendibile, consentendo l’integrazione di più stagioni, analisi temporali e pagine di approfondimento.
 
-### STEP 1 – Profilazione base
-**Obiettivo:** ottenere una visione sintetica del volume dati per ogni tabella di staging.  
+BI Architecture & Technologies
 
----
+SQL Server come database di staging e supporto analitico
 
-### STEP 2 – Profilazione per colonne
-**Obiettivo:** analizzare ogni colonna per capire la qualità dei dati.
+ETL scripts per la preparazione e trasformazione dei dati
 
-Per ogni colonna di ogni tabella vengono calcolati:
-- numero totale di righe  
-- numero di righe non valorizzate (NULL o vuote)  
-- numero di valori distinti  
-- percentuale di nullità e di univocità  
+Power BI per modellazione semantica e visualizzazione
 
-Questo step permette di capire subito se una colonna è:
-- poco popolata  
-- poco significativa  
-- potenzialmente problematica  
+Activities Performed
 
----
+Ingestione e caricamento dati su SQL Server
 
-### STEP 3 – Profilazione numerica
-Analisi di:
-- MIN  
-- MAX  
-- AVG  
-- STDDEV  
-- individuazione outlier  
+Preparazione e trasformazione dei dati tramite processi ETL
 
-Serve per verificare se i valori numerici hanno un range credibile, ad esempio:
-- goal negativi  
-- minuti giocati > 6000  
-- età giocatore non realistica  
+Progettazione del modello dati (fact e dimensioni)
 
-Questo permette di individuare valori sballati che falsano medie e KPI.
+Sviluppo di una dashboard analitica di sintesi in Power BI
 
----
+Data Profiling & Data Quality
 
-### STEP 4 – Regole di business
-Verifica delle **logiche di dominio (calcio)**, ad esempio:
-- Starts <= Matches  
-- Goals <= Shots  
-- Minutes >= 0  
+Il progetto include un processo strutturato di data profiling e data quality, integrato nel flusso BI per garantire affidabilità e coerenza delle analisi.
 
-Queste regole permettono di controllare che il dato rispetti la logica del contesto applicativo.
+Step 1 – Table-level profiling
 
----
+Analisi del volume dati e della completezza delle tabelle di staging.
 
-## Nota
-Il progetto ha uno scopo prevalentemente didattico ed è stato realizzato per consolidare le competenze su:
-- modellazione dati  
-- integrazione  
-- qualità del dato  
-- visualizzazione in Power BI  
+Step 2 – Column-level profiling
+
+Per ogni colonna vengono analizzati:
+
+numero totale di record
+
+valori null o non valorizzati
+
+valori distinti
+
+percentuali di nullità e univocità
+
+Questo consente di individuare attributi poco significativi o potenzialmente problematici.
+
+Step 3 – Numerical profiling
+
+Analisi statistica dei campi numerici tramite:
+
+MIN / MAX
+
+AVG
+
+standard deviation
+
+individuazione di outlier
+
+Utilizzata per intercettare valori anomali che potrebbero compromettere KPI e aggregazioni.
+
+Step 4 – Business rules validation
+
+Applicazione di regole di dominio per verificare la coerenza logica dei dati, ad esempio:
+
+Starts ≤ Matches
+
+Goals ≤ Shots
+
+Minutes ≥ 0
+
+Queste regole garantiscono l’allineamento tra dato e contesto applicativo.
+
+Notes
+
+Il progetto è focalizzato su process design, data quality e analytical modeling, più che sulla sola visualizzazione.
+Il dataset utilizzato è pubblico, mentre struttura, controlli e approccio riflettono scenari BI reali.
