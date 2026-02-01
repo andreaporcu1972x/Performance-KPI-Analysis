@@ -81,9 +81,6 @@ Goals ≤ Shots
 
 Minutes ≥ 0
 
-Queste regole garantiscono l’allineamento tra dato e contesto applicativo.
 
-Notes
 
-Il progetto è focalizzato su process design, data quality e analytical modeling, più che sulla sola visualizzazione.
-Il dataset utilizzato è pubblico, mentre struttura, controlli e approccio riflettono scenari BI reali.
+
